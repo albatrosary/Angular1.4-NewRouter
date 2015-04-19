@@ -1,0 +1,26 @@
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">ユーザ一覧
+  <input type="text" class="form-control" aria-label="..." ng-model="search">
+  </div>
+
+  <!-- Table -->
+  <table class="table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Update</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="data in home.names | filter: search">
+        <th scope="row">{{$index}}</th>
+        <td>{{data.name}}</td>
+        <td>{{data.age}}</td>
+        <td><a ng-link="edit({ id: $index })" class="btn btn-default" type="submit">Button</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
